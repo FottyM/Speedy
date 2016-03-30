@@ -3,7 +3,7 @@ Author: Fortunat Mutunda
 Website: mutunda.com
 Blog: blog.mutunda.com
 contact: fotimutunda@gmail.com
-License: MIT
+License: [MIT](https://github.com/FottyM/Speedy/blob/master/LICENSE.md)
 ---
 
 #Speedy
