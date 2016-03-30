@@ -1,30 +1,15 @@
-define(['react','react-dom'],
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Stats = require('./stats.js');
+var RamdomWords = require('./randomwords.js');
+var UserInput = require('./userinput.js');
 
-  (React,ReactDOM) => {
-
-      var userInput = React.createClass({
-
-        getInitialState: function() {
-          return {value: 'Type semething'};
-          },
-
-          handleChange: function(event) {
-          this.setState({value: event.target.value});
-          },
-
-          render: function() {
-            return (
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-              />
-    );
-  }
-      });
-
-      ReactDOM.render(
-        React.createElement(userInput, null),
-        document.getElementById('content')
-      );
-  });
+ReactDOM.render(
+  <div>
+    <h2><RamdomWords/></h2>
+    <UserInput/>
+    <Stats/>
+  </div>
+    ,
+  document.getElementById('content')
+);

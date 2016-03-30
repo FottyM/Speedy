@@ -1,8 +1,7 @@
-define(['react','react-dom'],
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-  (React,ReactDOM) => {
-
-      var userInput = React.createClass({
+module.exports = React.createClass({
 
         getInitialState: function() {
           return {value: 'Type semething'};
@@ -22,9 +21,3 @@ define(['react','react-dom'],
     );
   }
       });
-
-      ReactDOM.render(
-        React.createElement(userInput, null),
-        document.getElementById('content')
-      );
-  });
