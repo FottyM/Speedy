@@ -5,7 +5,7 @@ define(['react','react-dom'],
       var userInput = React.createClass({
 
         getInitialState: function() {
-          return {value: 'Hello!'};
+          return {value: 'Type semething'};
           },
 
           handleChange: function(event) {
@@ -21,16 +21,10 @@ define(['react','react-dom'],
               />
     );
   }
-
       });
-
 
       ReactDOM.render(
         React.createElement(userInput, null),
         document.getElementById('content')
       );
-
-
-
-
   });
