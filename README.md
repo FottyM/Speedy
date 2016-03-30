@@ -1,3 +1,10 @@
+---
+Author: Fortunat Mutunda
+Website: mutunda.com
+Blog: blog.mutunda.com
+contact: fotimutunda@gmail.com
+---
+
 #Speedy
 
 Speedy (I hope DC Comics won't sue me because of this name) is speed typing multiplayer game. It is build on reactjs, and I use webpack as my bundler and babel as the compiler.
