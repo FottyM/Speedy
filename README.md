@@ -3,6 +3,7 @@ Author: Fortunat Mutunda
 Website: mutunda.com
 Blog: blog.mutunda.com
 contact: fotimutunda@gmail.com
+License: MIT
 ---
 
 #Speedy
