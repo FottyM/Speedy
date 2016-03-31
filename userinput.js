@@ -1,7 +1,13 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from'react-dom';
+
+
 
 module.exports = React.createClass({
+
+        propType:{
+          value: React.PropTypes.string
+          },
 
         getInitialState: function() {
           return {value: 'Type semething'};
@@ -19,5 +25,7 @@ module.exports = React.createClass({
                 onChange={this.handleChange}
               />
     );
+
   }
-      });
+
+});

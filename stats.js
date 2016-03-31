@@ -1,17 +1,26 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import RamdomWords from './randomwords';
+import UserInput from './userinput';
 
 module.exports = React.createClass({
+
 
   render : function () {
 
     var score = Math.random();
     var speed = Math.floor(Math.random() + score);
 
-    return (<div>
-      <p>Words per minute: {speed} </p>
-      <p>Score: {score} </p>
+    // if (RamdomWords.porps) {
+    //
+    // } else {
+    //
+    // }
 
+    return (<div>
+      <p> Match: {speed} </p>
+      <p> Score: {score} </p>
+      {this.props.name}
     </div>)
   }
 
