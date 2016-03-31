@@ -14,7 +14,9 @@ module.exports = React.createClass({
           },
 
           handleChange: function(event) {
+          this.state.value = event.target.value;
           this.setState({value: event.target.value});
+          this.props.updatemade(this.state.value);
           },
 
           render: function() {
