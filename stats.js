@@ -11,12 +11,6 @@ module.exports = React.createClass({
     var score = Math.random();
     var speed = Math.floor(Math.random() + score);
 
-    // if (RamdomWords.porps) {
-    //
-    // } else {
-    //
-    // }
-
     return (<div>
       <p> Match: {speed} </p>
       <p> Score: {score} </p>
