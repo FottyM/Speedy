@@ -5,13 +5,14 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server  --hot"
   },
   "dependencies": {
     "babel-cli": "^6.5.1",
     "babelify": "^7.2.0",
     "bible-ref": "^1.0.0",
     "random-word": "^1.0.2",
+    "random-word-generator": "^0.9.9",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "webpack": "^1.12.14",

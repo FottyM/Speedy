@@ -1,33 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Rwg from 'random-word-generator'
 
 module.exports = React.createClass({
 
     propType:{
-      word: React.PropTypes.string
+      word: React.PropTypes.string,
+      nextWord: React.PropTypes.string
     },
 
     getInitialState:function (){
 
-      return {word:''}
+      return {word:'',nextWord:'' }
 
     },
 
-    reloadWord: function () {
-      var words = ['For', 'God' ,'so' ,"loved" ,"the" ,"world" ,"that" ,"he" ,"gave" ,"his","one " , "and" ,"only" ,"Son,", "that" ,"whoever" ,"believes" ,"in him" ,"shall", "not" ,"perish", "but" ,"have" ,"eternal", "life."];
-      this.state.word = words[Math.floor(Math.random()*words.length)];
-      this.setState({word: this.state.word})
+    generateRandom: function () {
+
+      var generator = new Rwg();
+      var words =  generator.generate();
+      this.state.word = words;
+      this.setState({word: this.state.word,nextWord: this.state.nextWord})
     },
 
     componentDidMount: function () {
 
-      this.reloadWord();
-      setInterval(this.reloadWord,3000);
+      this.generateRandom();
+      setInterval(this.generateRandom,8000);
 
     },
 
     render : function() {
-      return <p>{this.state.word}</p>;
+      return <div>
+          <h2>Next: {this.state.nextWord}</h2>
+          <h1>Current: {this.state.word}</h1>
+      </div>;
     }
 });

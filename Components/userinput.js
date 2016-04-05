@@ -18,7 +18,10 @@ module.exports = React.createClass({
           this.setState({value: event.target.value});
           this.props.updatemade(this.state.value);
           },
+          componentDidMount: function(){
+              this.state.value = '';
 
+          },
           render: function() {
             return (
               <input

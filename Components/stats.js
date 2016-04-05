@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RamdomWords from './randomwords';
-import UserInput from './userinput';
+import RamdomWords from './Randomwords';
+import UserInput from './Userinput';
 
 module.exports = React.createClass({
 
