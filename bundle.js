@@ -44,118 +44,41 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
+	'use strict';
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(158)], __WEBPACK_AMD_DEFINE_RESULT__ = function (React, ReactDOM) {
-	  var Comment = React.createClass({
-	    displayName: "Comment",
+	var _react = __webpack_require__(1);
 
-	    render: function render() {
-	      return React.createElement(
-	        "div",
-	        { className: "comment" },
-	        React.createElement(
-	          "h2",
-	          { className: "commentAuthor" },
-	          this.props.author
-	        ),
-	        this.props.children
-	      );
-	    }
-	  });
+	var _react2 = _interopRequireDefault(_react);
 
-	  var CommentList = React.createClass({
-	    displayName: "CommentList",
+	var _reactDom = __webpack_require__(158);
 
-	    render: function render() {
-	      var commentNodes = this.props.data.map(function (comment) {
-	        return React.createElement(
-	          Comment,
-	          { author: comment.author, key: comment.id },
-	          comment.text
-	        );
-	      });
-	      return React.createElement(
-	        "div",
-	        { className: "commentList" },
-	        commentNodes
-	      );
-	    }
-	  });
+	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	  var CommentForm = React.createClass({
-	    displayName: "CommentForm",
+	var _Stats = __webpack_require__(159);
 
-	    getInitialState: function getInitialState() {
-	      return { author: '', text: '' };
-	    },
-	    handleAuthorChange: function handleAuthorChange(e) {
-	      this.setState({ author: e.target.value });
-	    },
+	var _Stats2 = _interopRequireDefault(_Stats);
 
-	    render: function render() {
-	      return React.createElement(
-	        "div",
-	        null,
-	        React.createElement("input", {
-	          type: "text",
-	          placeholder: "Say something...",
-	          value: "Some static value"
-	        }),
-	        React.createElement("input", {
-	          type: "text",
-	          placeholder: "Your name",
-	          value: this.state.author,
-	          onChange: this.handleAuthorChange
-	        })
-	      );
-	    }
-	  });
+	var _Randomwords = __webpack_require__(162);
 
-	  var CommentBox = React.createClass({
-	    displayName: "CommentBox",
+	var _Randomwords2 = _interopRequireDefault(_Randomwords);
 
-	    loadCommentsFromServer: function loadCommentsFromServer() {
-	      // Lets mock the data, in reality would fetch it from server. In this case
-	      // we will simply add same comment to the old data every time a pull is made from "server"
-	      oldData = this.state.data;
-	      oldData.push({ "author": "Sukram", "text": "This is niss thing" });
-	      this.setState({ data: oldData });
-	    },
+	var _Userinput = __webpack_require__(163);
 
-	    getInitialState: function getInitialState() {
-	      return { data: [] };
-	    },
+	var _Userinput2 = _interopRequireDefault(_Userinput);
 
-	    componentDidMount: function componentDidMount() {
-	      this.loadCommentsFromServer();
-	      setInterval(this.loadCommentsFromServer, 10000);
-	    },
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	    handleCommentSubmit: function handleCommentSubmit(comment) {
-	      // Mock out server submitting and simply push the comment to existing data
-	      oldData = this.state.data;
-	      oldData.push(comment);
-	      this.setState({ data: oldData });
-	    },
-
-	    render: function render() {
-	      return React.createElement(
-	        "div",
-	        { className: "commentBox" },
-	        React.createElement(
-	          "h1",
-	          null,
-	          "Comments"
-	        ),
-	        React.createElement(CommentList, { data: this.state.data }),
-	        React.createElement(CommentForm, { onCommentSubmit: this.handleCommentSubmit })
-	      );
-	    }
-	  });
-
-	  ReactDOM.render(React.createElement(CommentBox, null), document.getElementById('content'));
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	_reactDom2.default.render(_react2.default.createElement(
+	  'div',
+	  null,
+	  _react2.default.createElement(
+	    'h2',
+	    null,
+	    _react2.default.createElement(_Randomwords2.default, null)
+	  ),
+	  _react2.default.createElement(_Userinput2.default, null),
+	  _react2.default.createElement(_Stats2.default, null)
+	), document.getElementById('content'));
 
 /***/ },
 /* 1 */
@@ -19814,6 +19737,250 @@
 	'use strict';
 
 	module.exports = __webpack_require__(3);
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _randomwords = __webpack_require__(160);
+
+	var _randomwords2 = _interopRequireDefault(_randomwords);
+
+	var _userinput = __webpack_require__(161);
+
+	var _userinput2 = _interopRequireDefault(_userinput);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+
+
+	  render: function render() {
+
+	    var score = Math.random();
+	    var speed = Math.floor(Math.random() + score);
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        ' Match: ',
+	        speed,
+	        ' '
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        ' Score: ',
+	        score,
+	        ' '
+	      ),
+	      this.props.name
+	    );
+	  }
+
+	});
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+
+
+	  propType: {
+	    word: _react2.default.PropTypes.string
+	  },
+
+	  getInitialState: function getInitialState() {
+
+	    return { word: '' };
+	  },
+
+	  reloadWord: function reloadWord() {
+	    var words = ['For', 'God', 'so', "loved", "the", "world", "that", "he", "gave", "his", "one ", "and", "only", "Son,", "that", "whoever", "believes", "in him", "shall", "not", "perish", "but", "have", "eternal", "life."];
+	    this.state.word = words[Math.floor(Math.random() * words.length)];
+	    this.setState({ word: this.state.word });
+	  },
+
+	  componentDidMount: function componentDidMount() {
+
+	    this.reloadWord();
+	    setInterval(this.reloadWord, 3000);
+	  },
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'p',
+	      null,
+	      this.state.word
+	    );
+	  }
+	});
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+
+
+	  propType: {
+	    value: _react2.default.PropTypes.string
+	  },
+
+	  getInitialState: function getInitialState() {
+	    return { value: 'Type semething' };
+	  },
+
+	  handleChange: function handleChange(event) {
+	    this.state.value = event.target.value;
+	    this.setState({ value: event.target.value });
+	    this.props.updatemade(this.state.value);
+	  },
+
+	  render: function render() {
+	    return _react2.default.createElement('input', {
+	      type: 'text',
+	      value: this.state.value,
+	      onChange: this.handleChange
+	    });
+	  }
+
+	});
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+
+
+	  propType: {
+	    word: _react2.default.PropTypes.string
+	  },
+
+	  getInitialState: function getInitialState() {
+
+	    return { word: '' };
+	  },
+
+	  reloadWord: function reloadWord() {
+	    var words = ['For', 'God', 'so', "loved", "the", "world", "that", "he", "gave", "his", "one ", "and", "only", "Son,", "that", "whoever", "believes", "in him", "shall", "not", "perish", "but", "have", "eternal", "life."];
+	    this.state.word = words[Math.floor(Math.random() * words.length)];
+	    this.setState({ word: this.state.word });
+	  },
+
+	  componentDidMount: function componentDidMount() {
+
+	    this.reloadWord();
+	    setInterval(this.reloadWord, 3000);
+	  },
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'p',
+	      null,
+	      this.state.word
+	    );
+	  }
+	});
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createClass({
+	  displayName: 'exports',
+
+
+	  propType: {
+	    value: _react2.default.PropTypes.string
+	  },
+
+	  getInitialState: function getInitialState() {
+	    return { value: 'Type semething' };
+	  },
+
+	  handleChange: function handleChange(event) {
+	    this.state.value = event.target.value;
+	    this.setState({ value: event.target.value });
+	    this.props.updatemade(this.state.value);
+	  },
+
+	  render: function render() {
+	    return _react2.default.createElement('input', {
+	      type: 'text',
+	      value: this.state.value,
+	      onChange: this.handleChange
+	    });
+	  }
+
+	});
 
 /***/ }
 /******/ ]);

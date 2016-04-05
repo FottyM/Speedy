@@ -1,14 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import Stats from './stats.js'
-import RamdomWords from './randomwords'
-import UserInput from'./userinput';
+import ReactDOM,{render} from 'react-dom'
+import Randomwords from './Components/randomwords'
+import Stats from './Components/stats'
+import Input from './Components/userinput'
 
-ReactDOM.render(
+
+render(
   <div>
-    <h2><RamdomWords/></h2>
-    <UserInput/>
-    <Stats/>
+      <Randomwords />
+      <Input/>
+      <Stats/>
   </div>,
   document.getElementById('content')
 );
