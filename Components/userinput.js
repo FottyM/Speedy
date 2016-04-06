@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Title from './Title'
 
-
-
 module.exports = React.createClass({
 
     handleChange:function (event) {

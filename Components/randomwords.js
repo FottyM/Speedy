@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Rwg from 'random-word-generator'
 
 module.exports = React.createClass({
-
+    
     propType:{
       word: React.PropTypes.string,
       nextWord: React.PropTypes.string

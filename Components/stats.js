@@ -5,7 +5,6 @@ import UserInput from './Userinput';
 
 module.exports = React.createClass({
 
-
   render : function () {
 
     var score = Math.random();

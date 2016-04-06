@@ -19,7 +19,6 @@ module.exports = createClass({
         return(<div>
             <Randomwords/>
             <Userinput changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
-
         </div>)
     }
 
