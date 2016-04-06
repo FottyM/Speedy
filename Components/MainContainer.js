@@ -2,20 +2,26 @@ import React,{createClass} from 'react'
 import ReactDOM,{render} from 'react-dom'
 import Randomwords from './Randomwords'
 import Stats from './Stats'
-import Input from './Userinput'
+import Userinput from './Userinput'
 
 
-var MainContainer = createClass({
+module.exports = createClass({
 
-    render: function () {
+    getInitialState: function() {
+        return {title:"Welcome"};
+      },
 
+    changeTitle:function (title) {
+        this.setState({title});
+    },
+
+    render:function () {
         return(<div>
-            <Randomwords  />
-            <Input/>
-        </div>)
+            <Randomwords/>
+            <Userinput changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
 
+        </div>)
     }
 
-});
 
-export default MainContainer;
+});

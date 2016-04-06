@@ -1,36 +1,22 @@
-import React from 'react';
-import ReactDOM from'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Title from './Title'
 
 
 
 module.exports = React.createClass({
 
-        propType:{
-          value: React.PropTypes.string
-          },
+    handleChange:function (event) {
+        const title = event.target.value;
+        this.props.changeTitle(title);
 
-        getInitialState: function() {
-          return {value: 'Type semething'};
-          },
+    },
 
-          handleChange: function(event) {
-          this.state.value = event.target.value;
-          this.setState({value: event.target.value});
-          this.props.updatemade(this.state.value);
-          },
-          componentDidMount: function(){
-              this.state.value = '';
+    render:function () {
+    return(<div>
 
-          },
-          render: function() {
-            return (
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-              />
-    );
-
-  }
-
+        <Title title = {this.props.title}/>
+        <input onChange = {this.handleChange.bind(this)} value = {this.props.title}/>
+    </div>);
+    }
 });
