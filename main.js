@@ -1,15 +1,10 @@
-import React from 'react'
+import React,{createClass} from 'react'
 import ReactDOM,{render} from 'react-dom'
-import Randomwords from './Components/randomwords'
-import Stats from './Components/stats'
-import Input from './Components/userinput'
-
+import MainContainer from './Components/MainContainer'
 
 render(
   <div>
-      <Randomwords />
-      <Input/>
-      <Stats/>
+      <MainContainer/>
   </div>,
   document.getElementById('content')
 );
