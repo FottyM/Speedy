@@ -12,9 +12,8 @@ module.exports = React.createClass({
 
     render:function () {
     return(<div>
-
         <Title title = {this.props.title}/>
-        <input onChange = {this.handleChange.bind(this)} value = {this.props.title}/>
+        <input onChange = {this.handleChange} value = {this.props.title}/>
     </div>);
     }
 });
