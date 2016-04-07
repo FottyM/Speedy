@@ -4,33 +4,30 @@ import  randomWords from 'random-words';
 
 module.exports = createClass({
 
-    propType:{
-      word: PropTypes.array
-    },
-
-    getInitialState:function (){
-
-      return {word:[] }
-
-    },
-
-    generateRandom: function () {
-
-      var words =  randomWords();
-      this.state.word = words;
-      this.setState({word: this.state.word})
-    },
+    getInitialState: function() {
+    return {wez:'', zie:this.props.nextWords[0]};
+  },
 
     componentDidMount: function () {
 
-      this.generateRandom();
-      setInterval(this.generateRandom,8000);
-
+        var words = this.props.words;
+        var nextWords = this.props.nextWords;
+        this.setState({words , nextWords});
     },
 
-    render : function() {
-      return <div>
-          <h1>{this.state.word}</h1>
-      </div>;
+    render:function() {
+
+        this.state.wez = (this.state.words == this.state.zie ? "ok" : "not Ok")
+        // debugger
+        // console.log(wez)
+        return( <div>
+
+            <h2> {this.props.nextWords}</h2>
+            <h1>{this.props.words} </h1>
+            {this.state.wez}
+        </div>
+
+        )
+
     }
 });
